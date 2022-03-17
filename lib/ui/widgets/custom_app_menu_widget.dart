@@ -7,6 +7,7 @@ class CustomAppMenuWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("Build menuApp");
     return SizedBox(
       width: double.infinity,
       height: 50,
