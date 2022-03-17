@@ -5,14 +5,14 @@ import '../widgets/custom_subtitle_widget.dart';
 import '../widgets/custom_text_button_widget.dart';
 import '../widgets/custom_title_text_widget.dart';
 
-class CounterPage extends StatefulWidget {
-  const CounterPage({Key? key}) : super(key: key);
+class CounterProviderPage extends StatefulWidget {
+  const CounterProviderPage({Key? key}) : super(key: key);
 
   @override
-  State<CounterPage> createState() => _CounterPageState();
+  State<CounterProviderPage> createState() => _CounterProviderPageState();
 }
 
-class _CounterPageState extends State<CounterPage> {
+class _CounterProviderPageState extends State<CounterProviderPage> {
   int counter = 0;
 
   void _increment() {
@@ -35,7 +35,7 @@ class _CounterPageState extends State<CounterPage> {
         children: [
           const CustomAppMenuWidget(),
           const Spacer(),
-          const CustomSubTitleTextWidget(subtitle: 'Stateful'),
+          const CustomSubTitleTextWidget(subtitle: 'Provider'),
           CustomTitleTextWidget(title: 'Contador: $counter'),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

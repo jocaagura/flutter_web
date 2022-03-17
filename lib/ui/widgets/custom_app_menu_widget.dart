@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/custom_text_button_widget.dart';
+
 class CustomAppMenuWidget extends StatelessWidget {
   const CustomAppMenuWidget({Key? key}) : super(key: key);
 
@@ -8,7 +10,37 @@ class CustomAppMenuWidget extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 50,
-      color: Colors.red,
+      child: Row(
+        children: [
+          CustomTextButtonWidget(
+            title: 'Contador Stateful',
+            onPressed: () {
+              Navigator.pushNamed(context, '/stateful');
+            },
+            color: Colors.black,
+          ),
+          const SizedBox(
+            width: 10.0,
+          ),
+          CustomTextButtonWidget(
+            title: 'Contador Provider',
+            onPressed: () {
+              Navigator.pushNamed(context, '/provider');
+            },
+            color: Colors.blue,
+          ),
+          const SizedBox(
+            width: 10.0,
+          ),
+          CustomTextButtonWidget(
+            title: 'Pagina 404',
+            onPressed: () {
+              Navigator.pushNamed(context, '/noexiste');
+            },
+            color: Colors.red,
+          ),
+        ],
+      ),
     );
   }
 }
