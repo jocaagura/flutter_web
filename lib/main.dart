@@ -20,12 +20,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      // initialRoute: '/stateful',
-      // routes: {
-      //   '/stateful': (BuildContext context) => const CounterPage(),
-      //   '/provider': (BuildContext context) => const CounterProviderPage()
-      // },
-      // onGenerateRoute: (settings) => RouterGenerator.generateRoute(settings),
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
