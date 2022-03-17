@@ -7,7 +7,7 @@ class CustomAppMenuWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
       height: 50,
       child: Row(
@@ -33,7 +33,7 @@ class CustomAppMenuWidget extends StatelessWidget {
             width: 10.0,
           ),
           CustomTextButtonWidget(
-            title: 'Pagina 404',
+            title: 'NowHere',
             onPressed: () {
               Navigator.pushNamed(context, '/noexiste');
             },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web/router/route_generator.dart';
 
 import '../ui/pages/counter_page.dart';
 import '../ui/pages/counter_provider_page.dart';
@@ -19,11 +20,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: '/stateful',
-      routes: {
-        '/stateful': (BuildContext context) => CounterPage(),
-        '/provider': (BuildContext context) => CounterProviderPage()
-      },
+      // initialRoute: '/stateful',
+      // routes: {
+      //   '/stateful': (BuildContext context) => const CounterPage(),
+      //   '/provider': (BuildContext context) => const CounterProviderPage()
+      // },
+      // onGenerateRoute: (settings) => RouterGenerator.generateRoute(settings),
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
