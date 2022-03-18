@@ -9,6 +9,24 @@ class CustomAppMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("Build menuApp");
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return (constraints.maxWidth > 600)
+            ? const _TabletDesktopMenuWidget()
+            : const _MobileDesktopMenuWidget();
+      },
+    );
+  }
+}
+
+class _TabletDesktopMenuWidget extends StatelessWidget {
+  const _TabletDesktopMenuWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
       height: 50,
@@ -18,7 +36,7 @@ class CustomAppMenuWidget extends StatelessWidget {
             title: 'Contador Stateful',
             onPressed: () {
               // Navigator.pushNamed(context, '/stateful');
-              navigationService.navigateTo( '/stateful');
+              navigationService.navigateTo('/stateful');
             },
             color: Colors.black,
           ),
@@ -29,7 +47,7 @@ class CustomAppMenuWidget extends StatelessWidget {
             title: 'Contador Provider',
             onPressed: () {
               // Navigator.pushNamed(context, '/provider');
-              navigationService.navigateTo( '/provider');
+              navigationService.navigateTo('/provider');
             },
             color: Colors.blue,
           ),
@@ -39,8 +57,55 @@ class CustomAppMenuWidget extends StatelessWidget {
           CustomTextButtonWidget(
             title: 'NowHere',
             onPressed: () {
-             // Navigator.pushNamed(context, '/noexiste');
-              navigationService.navigateTo( '/noexiste');
+              // Navigator.pushNamed(context, '/noexiste');
+              navigationService.navigateTo('/noexiste');
+            },
+            color: Colors.red,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MobileDesktopMenuWidget extends StatelessWidget {
+  const _MobileDesktopMenuWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: Column(
+        children: [
+          CustomTextButtonWidget(
+            title: 'Contador Stateful',
+            onPressed: () {
+              // Navigator.pushNamed(context, '/stateful');
+              navigationService.navigateTo('/stateful');
+            },
+            color: Colors.black,
+          ),
+          const SizedBox(
+            width: 10.0,
+          ),
+          CustomTextButtonWidget(
+            title: 'Contador Provider',
+            onPressed: () {
+              // Navigator.pushNamed(context, '/provider');
+              navigationService.navigateTo('/provider');
+            },
+            color: Colors.blue,
+          ),
+          const SizedBox(
+            width: 10.0,
+          ),
+          CustomTextButtonWidget(
+            title: 'NowHere',
+            onPressed: () {
+              // Navigator.pushNamed(context, '/noexiste');
+              navigationService.navigateTo('/noexiste');
             },
             color: Colors.red,
           ),

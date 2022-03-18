@@ -8,6 +8,7 @@ class _NavigatorService {
   }
 
   void goBack(String routeNAme) {
+    print('Back');
     return navigatorKey.currentState!.pop();
   }
 }
