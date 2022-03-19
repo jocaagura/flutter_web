@@ -15,7 +15,11 @@ class RouteGenerator {
       '/providera': _fadePageRoute(const CounterProviderPage(), '/provider'),
       '/404a': _fadePageRoute(const Page404(), '/404'),
       '/stateful': _fadePageRoute(const CounterView(), '/stateful'),
-      '/provider': _fadePageRoute(const CounterProviderView(), '/provider'),
+      '/provider': _fadePageRoute(
+          const CounterProviderView(
+            base: 0,
+          ),
+          '/provider'),
       '/404': _fadePageRoute(const Page404View(), '/404')
     };
     String _key = settings.name ?? "/404";

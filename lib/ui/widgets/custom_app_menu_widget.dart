@@ -62,6 +62,25 @@ class _TabletDesktopMenuWidget extends StatelessWidget {
             },
             color: Colors.red,
           ),
+          CustomTextButtonWidget(
+            title: 'Contador Stateful 99',
+            onPressed: () {
+              // Navigator.pushNamed(context, '/stateful');
+              navigationService.navigateTo('/stateful/99');
+            },
+            color: Colors.black,
+          ),
+          const SizedBox(
+            width: 10.0,
+          ),
+          CustomTextButtonWidget(
+            title: 'Contador Provider 99',
+            onPressed: () {
+              // Navigator.pushNamed(context, '/stateful');
+              navigationService.navigateTo('/provider?base=99');
+            },
+            color: Colors.black,
+          ),
         ],
       ),
     );

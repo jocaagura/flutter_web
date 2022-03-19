@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/router/route_generator.dart';
-import 'package:flutter_web/services/navigator_service.dart';
-import 'package:flutter_web/ui/layout/main_layout_page.dart';
+
+import 'router/router.dart';
+import 'services/navigator_service.dart';
+import 'ui/layout/main_layout_page.dart';
 
 void main() {
+  FluroProvider.configureRoute();
   runApp(const MyApp());
 }
 
@@ -13,26 +15,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        navigationService.goBack('/');
-        return false;
-      },
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Rutas app',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        initialRoute: '/stateful',
-        onGenerateRoute: RouteGenerator.generateRoute,
-        navigatorKey: navigationService.navigatorKey,
-        builder: (_, child) {
-          return MainLayoutPage(
-            child: child ?? const CircularProgressIndicator(),
-          );
-        },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Rutas app',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      initialRoute: '/',
+      // onGenerateRoute: RouteGenerator.generateRoute,
+      onGenerateRoute: FluroProvider.router.generator,
+      // navigatorKey: navigationService.navigatorKey,
+      navigatorKey: navigationService.navigatorKey,
+      builder: (context, child) {
+        return MainLayoutPage(
+          child: child ?? const CircularProgressIndicator(),
+        );
+      },
     );
   }
 }

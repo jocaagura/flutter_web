@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/ui/widgets/custom_app_menu_widget.dart';
+
+import '../widgets/custom_app_menu_widget.dart';
 
 class MainLayoutPage extends StatelessWidget {
   const MainLayoutPage({Key? key, required this.child}) : super(key: key);

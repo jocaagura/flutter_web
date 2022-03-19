@@ -12,7 +12,7 @@ class Page404View extends StatelessWidget {
     return Column(
       children: [
         const CustomSubTitleTextWidget(
-          subtitle: 'Nowhere',
+          subtitle: 'Nowhere view',
         ),
         const CustomTitleTextWidget(
           title: '404 Not page found',
